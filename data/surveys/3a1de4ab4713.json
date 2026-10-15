@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "survey": {
+    "title": "Two-Number Addition Program Survey",
+    "description": "Collect feedback on the design, usability, and functionality of a program that adds two numbers.",
+    "welcome_text": "Welcome! We appreciate your input on our two-number addition program. Your responses are confidential and will help us improve the tool.",
+    "end_text": "Thank you for your valuable feedback!",
+    "language": "en",
+    "request": "write a survey for program for adding two number",
+    "groups": [
+      {
+        "name": "Program Feedback",
+        "description": "Questions about the program's features, usability, and performance.",
+        "questions": [
+          {
+            "code": "Q001",
+            "type_key": "multi_short_text",
+            "text": "Please list up to three features you found most useful in the two-number addition program.",
+            "help": "Enter each feature in a separate text box.",
+            "mandatory": "N",
+            "answers": [],
+            "subquestions": [
+              "Clarity of program instructions",
+              "Ease of use of the program",
+              "Effectiveness in adding numbers accurately",
+              "Satisfaction with program speed",
+              "Overall satisfaction with the program"
+            ],
+            "status": "ok",
+            "error": "",
+            "note": ""
+          }
+        ],
+        "uid": "b56a6ca4"
+      },
+      {
+        "name": "test",
+        "description": "test group",
+        "questions": [
+          {
+            "code": "Q002",
+            "type_key": "short_text",
+            "text": "test add ",
+            "help": "prograaming",
+            "mandatory": "S",
+            "answers": [],
+            "subquestions": [],
+            "status": "edited",
+            "error": "",
+            "note": ""
+          }
+        ],
+        "uid": "3a1f6fd2"
+      }
+    ]
+  }
+}

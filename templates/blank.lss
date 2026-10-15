@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Base template for generated surveys. The builder keeps the <surveys> and
+  <surveys_languagesettings> rows from this file and replaces everything that depends on
+  groups/questions. For best compatibility with your LimeSurvey version, replace this file with
+  a "Survey structure (.lss)" export of an empty survey from YOUR LimeSurvey installation.
+-->
+<document>
+  <LimeSurveyDocType>Survey</LimeSurveyDocType>
+  <DBVersion>500</DBVersion>
+  <languages>
+    <language>en</language>
+  </languages>
+  <surveys>
+    <fields>
+      <fieldname>sid</fieldname>
+      <fieldname>active</fieldname>
+      <fieldname>anonymized</fieldname>
+      <fieldname>format</fieldname>
+      <fieldname>savetimings</fieldname>
+      <fieldname>language</fieldname>
+      <fieldname>additional_languages</fieldname>
+      <fieldname>datestamp</fieldname>
+      <fieldname>allowsave</fieldname>
+      <fieldname>allowprev</fieldname>
+      <fieldname>showxquestions</fieldname>
+      <fieldname>showgroupinfo</fieldname>
+      <fieldname>showqnumcode</fieldname>
+      <fieldname>showwelcome</fieldname>
+      <fieldname>showprogress</fieldname>
+      <fieldname>questionindex</fieldname>
+    </fields>
+    <rows>
+      <row>
+        <sid><![CDATA[100000]]></sid>
+        <active><![CDATA[N]]></active>
+        <anonymized><![CDATA[N]]></anonymized>
+        <format><![CDATA[G]]></format>
+        <savetimings><![CDATA[N]]></savetimings>
+        <language><![CDATA[en]]></language>
+        <additional_languages><![CDATA[]]></additional_languages>
+        <datestamp><![CDATA[N]]></datestamp>
+        <allowsave><![CDATA[Y]]></allowsave>
+        <allowprev><![CDATA[Y]]></allowprev>
+        <showxquestions><![CDATA[Y]]></showxquestions>
+        <showgroupinfo><![CDATA[B]]></showgroupinfo>
+        <showqnumcode><![CDATA[X]]></showqnumcode>
+        <showwelcome><![CDATA[Y]]></showwelcome>
+        <showprogress><![CDATA[Y]]></showprogress>
+        <questionindex><![CDATA[0]]></questionindex>
+      </row>
+    </rows>
+  </surveys>
+  <surveys_languagesettings>
+    <fields>
+      <fieldname>surveyls_survey_id</fieldname>
+      <fieldname>surveyls_language</fieldname>
+      <fieldname>surveyls_title</fieldname>
+      <fieldname>surveyls_description</fieldname>
+      <fieldname>surveyls_welcometext</fieldname>
+      <fieldname>surveyls_endtext</fieldname>
+      <fieldname>surveyls_url</fieldname>
+      <fieldname>surveyls_urldescription</fieldname>
+      <fieldname>surveyls_dateformat</fieldname>
+      <fieldname>surveyls_numberformat</fieldname>
+    </fields>
+    <rows>
+      <row>
+        <surveyls_survey_id><![CDATA[100000]]></surveyls_survey_id>
+        <surveyls_language><![CDATA[en]]></surveyls_language>
+        <surveyls_title><![CDATA[]]></surveyls_title>
+        <surveyls_description><![CDATA[]]></surveyls_description>
+        <surveyls_welcometext><![CDATA[]]></surveyls_welcometext>
+        <surveyls_endtext><![CDATA[]]></surveyls_endtext>
+        <surveyls_url><![CDATA[]]></surveyls_url>
+        <surveyls_urldescription><![CDATA[]]></surveyls_urldescription>
+        <surveyls_dateformat><![CDATA[1]]></surveyls_dateformat>
+        <surveyls_numberformat><![CDATA[0]]></surveyls_numberformat>
+      </row>
+    </rows>
+  </surveys_languagesettings>
+</document>

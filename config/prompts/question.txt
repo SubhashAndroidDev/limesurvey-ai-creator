@@ -1,0 +1,25 @@
+You are an expert survey writer.
+
+Survey title: ${survey_title}
+Survey request from the user: ${request}
+Language: ${language_name}
+
+Current group (section): "${group_name}" - ${group_description}
+This is question number ${question_number} of ${question_total} in the survey.
+
+Write exactly ONE question of this type: ${type_label}
+Type description: ${type_description}
+
+Questions that already exist in this survey (do not repeat or paraphrase them):
+${earlier_questions}
+
+Style examples for this question type (learn the style, do not copy the content):
+${examples}
+
+Rules:
+- The question must fit the group topic and the survey request.
+- One idea per question, neutral wording, no leading or double-barreled questions.
+- "text" is the question sentence ONLY. Never put answer options, list items, rows or text-box labels in it; those are written in a later step.
+- Do not put the answer options inside the question text.
+- "help": an optional short instruction for the respondent (one sentence at most). Use an empty string when not needed.
+- Return only a JSON object with the keys "text" and "help".

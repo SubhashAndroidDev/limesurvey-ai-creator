@@ -1,0 +1,74 @@
+# ---------------------------------------------------------------------------
+# Question type registry. To support a new LimeSurvey question type, add an entry here.
+#   code        LimeSurvey type code used in the .lss file
+#   theme       LimeSurvey question theme name
+#   weight      relative share of this type when the type mix is chosen automatically
+#   enabled     false hides the type completely
+#   answers     min/max entries for LimeSurvey "answers" (e.g. radio choices, array columns)
+#   subquestions min/max entries for LimeSurvey "subquestions" (e.g. checkbox options, array rows)
+# ---------------------------------------------------------------------------
+types:
+  single_choice:
+    label: Single choice
+    code: L
+    theme: listradio
+    weight: 4
+    enabled: true
+    description: Respondent selects exactly one answer from a list.
+    hint: Choices must be mutually exclusive and cover the likely responses. Use an ordered scale when the question measures an opinion or frequency.
+    answers: {min: 3, max: 7}
+
+  multiple_choice:
+    label: Multiple choice
+    code: M
+    theme: multiplechoice
+    weight: 2
+    enabled: true
+    description: Respondent may select several options from a list.
+    hint: Each entry is one selectable option; respondents may select more than one.
+    subquestions: {min: 3, max: 8}
+
+  short_text:
+    label: Short free text
+    code: S
+    theme: shortfreetext
+    weight: 2
+    enabled: true
+    description: Respondent types a short open answer (one line).
+
+  long_text:
+    label: Long free text
+    code: T
+    theme: longfreetext
+    weight: 1
+    enabled: true
+    description: Respondent types a long open answer (several sentences).
+
+  yes_no:
+    label: Yes / No
+    code: Y
+    theme: yesno
+    weight: 1
+    enabled: true
+    description: Respondent answers Yes or No. The question must be answerable with yes or no.
+
+  multi_short_text:
+    label: Multiple short text
+    code: Q
+    theme: multipleshorttext
+    weight: 1
+    enabled: true
+    description: Respondent fills several short text boxes, one per item.
+    hint: Each entry is the label of one short text box the respondent fills in.
+    subquestions: {min: 2, max: 5}
+
+  array:
+    label: Array (matrix)
+    code: F
+    theme: arrays/array
+    weight: 1
+    enabled: true
+    description: A matrix - several statements (rows) rated on the same scale (columns).
+    hint: "'subquestions' are the rows (statements to rate); 'answers' are the shared column choices, for example an ordered agreement scale."
+    answers: {min: 3, max: 5}
+    subquestions: {min: 2, max: 5}

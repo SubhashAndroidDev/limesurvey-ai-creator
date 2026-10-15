@@ -1,0 +1,83 @@
+# ---------------------------------------------------------------------------
+# Main settings. Nothing in the Python code is hard-coded: change values here.
+# Environment variables OLLAMA_BASE_URL and OLLAMA_MODEL override llm.* values.
+# ---------------------------------------------------------------------------
+llm:
+  provider: groq
+  base_url: http://localhost:11434
+  model: qwen2.5:7b-instruct
+  temperature: 0.4
+  num_ctx: 4096
+  timeout_seconds: 180
+  max_retries: 2                  # content retries per call (bad shape / failed checks)
+  retry_backoff_seconds: 5        # minimum wait after a rate limit (the server's own hint is used when longer)
+  heal_attempts: 2                # extra full attempts per question before a safe default is used
+  heal_cooldown_seconds: 8        # base pause between those attempts (multiplied by the attempt number)
+
+  groq:
+    model: openai/gpt-oss-120b
+    reasoning_effort: low           # low | medium | high - lower = fewer hidden tokens, fewer rate limits
+    tokens_per_minute: 8000         # your Groq tier's TPM limit; calls are paced to stay below 85% of it
+    min_interval_seconds: 0         # optional extra pause between calls
+    max_rate_limit_waits: 8         # how many times one call may wait out a 429 before giving up
+
+survey:
+  default_language: en
+  min_questions: 1
+  max_questions: 60
+  default_questions: 10
+
+  # Automatically distribute questions across groups.
+  questions_per_group: auto
+  auto_group_size: 4
+  fallback_group_name: "Section {index}"
+
+  # LimeSurvey identifiers
+  question_code_pattern: "Q{index:03d}"
+  subquestion_code_pattern: "SQ{index:03d}"
+  answer_code_pattern: "A{index:02d}"
+
+  # Question generation
+  recent_questions_in_context: 12
+  type_jitter: 0.35
+  type_seed: null
+
+# Display names for the language selector (code -> name used inside prompts).
+languages:
+  en: English
+  hi: Hindi
+  es: Spanish
+  fr: French
+  de: German
+  ar: Arabic
+  pt: Portuguese
+  it: Italian
+
+prompts:
+  no_earlier_questions: "(none yet)"
+  no_examples: "(no examples available - use your own judgement)"
+  empty_help: "(none)"
+
+template:
+  file: templates/blank.lss
+  db_version: null                # null = keep the DBVersion found in the template file
+  # Sections of the template that depend on old questions and are removed before building.
+  purge_sections:
+    - groups
+    - group_l10ns
+    - questions
+    - subquestions
+    - answers
+    - answer_l10ns
+    - question_l10ns
+    - question_attributes
+    - defaultvalues
+    - conditions
+    - quota
+    - quota_members
+    - quota_languagesettings
+    - assessments
+
+examples:
+  dir: examples                   # put real exported .lss files here (few-shot learning)
+  max_per_type: 2                 # examples injected into each question prompt

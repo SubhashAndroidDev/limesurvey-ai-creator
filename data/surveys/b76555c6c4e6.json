@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "survey": {
+    "title": "Chocolate Consumer Preferences Survey",
+    "description": "Collects data on chocolate preferences, buying habits, brand loyalty, and satisfaction for market analysis.",
+    "welcome_text": "Welcome! Thank you for taking a few minutes to share your chocolate preferences. Your responses are confidential and will help improve chocolate products and services.",
+    "end_text": "Thank you for completing the survey! We appreciate your insights on chocolate preferences.",
+    "language": "en",
+    "request": "Prompt: Chocolate Consumer Survey\n\nCreate an interactive, user-friendly chocolate survey designed for a tablet screen. The survey should collect information about consumers’ chocolate preferences, buying habits, favorite brands, and satisfaction levels.\n\nInclude the following questions:\n\nWhat is your age group?\nHow often do you eat chocolate?\nWhich type of chocolate do you prefer?\nMilk chocolate\nDark chocolate\nWhite chocolate\nChocolate with nuts or caramel\nWhat is your favorite chocolate brand?\nHow much do you usually spend on chocolate?\nWhere do you usually buy chocolate?\nWhat factors influence your chocolate purchase?\nTaste\nPrice\nBrand\nPackaging\nQuality\nHow satisfied are you with your favorite chocolate brand? (Rate from 1 to 5.)\nWould you try a new chocolate brand if it offered a unique flavor?\nWhat improvements or new flavors would you like to see in chocolate products?\n\nDesign requirements:\n\nUse a clean, attractive, chocolate-themed design.\nMake the survey fully responsive for tablet screens.\nUse large buttons, readable fonts, and simple navigation.\nInclude multiple-choice questions, rating scales, and an optional text response.\nDisplay a progress bar and Back/Next buttons.\nShow a thank-you message after submission.\nKeep the survey short enough to complete in 2–3 minutes.\nStore responses in a structured format for analysis and reporting.",
+    "groups": [
+      {
+        "name": "Chocolate Preferences & Habits",
+        "description": "Questions about age, consumption frequency, type preferences, brand, spending, and purchase locations.",
+        "questions": [
+          {
+            "code": "Q001",
+            "type_key": "single_choice",
+            "text": "What is your age group?",
+            "help": "",
+            "mandatory": "Y",
+            "answers": [
+              "Strongly disagree",
+              "Disagree",
+              "Neutral",
+              "Agree",
+              "Strongly agree"
+            ],
+            "subquestions": [],
+            "status": "ok",
+            "error": "",
+            "note": ""
+          }
+        ],
+        "uid": "ecf035df"
+      }
+    ]
+  }
+}
