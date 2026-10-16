@@ -1,4 +1,4 @@
-# AI Survey Creator for LimeSurvey (open source, fully local)
+﻿# AI Survey Creator for LimeSurvey (open source, fully local)
 
 Describe a survey in plain words ("customer satisfaction survey for a hotel"), choose how many
 questions you want, review/edit the generated questions, and download a LimeSurvey `.lss` file.
