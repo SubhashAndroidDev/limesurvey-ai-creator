@@ -5,3 +5,9 @@ __pycache__/
 *.lss
 !templates/*.lss
 !examples/*.lss
+.env
+.venv/
+__pycache__/
+*.pyc
+data/surveys/*
+!data/surveys/.gitkeep
