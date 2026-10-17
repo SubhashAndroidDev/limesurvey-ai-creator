@@ -19,7 +19,7 @@ cfg_patch = service.AppConfig
 at = AppTest.from_file(str(Path(__file__).resolve().parent.parent / "app.py"), default_timeout=120)
 at.run()
 at.text_area(key="request_input").input("school feedback survey").run()
-at.button[[b.label for b in at.button].index("✨ Generate survey")].click().run()
+at.button[[b.label for b in at.button].index("Generate survey")].click().run()
 assert not at.exception, at.exception
 survey = at.session_state["survey"]
 qs = [q for _, q in survey.iter_questions()]
