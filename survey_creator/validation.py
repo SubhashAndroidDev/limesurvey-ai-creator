@@ -10,6 +10,10 @@ from .models import Question
 CODE_RE = re.compile(r"^[A-Za-z][A-Za-z0-9]{0,19}$")
 # Leading list markers a model sometimes adds: "1.", "2)", "- ", "* ", "a)".
 _LEADING_MARKER_RE = re.compile(r"^\s*(?:\d+[.)]|[a-zA-Z][.)]|[-*\u2022])\s+")
+_PLACEHOLDER_RE = re.compile(
+    r"^(?:option|item|row|choice|answer|question|statement|category|label)\s*(?:\d+|[a-z])$",
+    re.IGNORECASE,
+)
 
 
 def clean_text(value: str) -> str:
@@ -18,7 +22,7 @@ def clean_text(value: str) -> str:
 
 
 def clean_options(items: list[str], max_count: int) -> list[str]:
-    """Clean a list of options: remove markers, empties and duplicates, cut to ``max_count``."""
+    """Clean a list of options: remove markers, empties and duplicates, cut to max_count."""
     seen: set[str] = set()
     result: list[str] = []
     for item in items or []:
@@ -32,12 +36,17 @@ def clean_options(items: list[str], max_count: int) -> list[str]:
 
 
 def options_problems(spec: QuestionTypeSpec, answers: list[str], subquestions: list[str]) -> list[str]:
-    """Return what is wrong with the answers/subquestions of a question of type ``spec``."""
+    """Validate both list sizes and content, rejecting generic model placeholders."""
     problems: list[str] = []
     if spec.needs_answers and not (spec.answers_min <= len(answers) <= spec.answers_max):
         problems.append(f"'answers' needs {spec.answers_min}-{spec.answers_max} entries, got {len(answers)}")
     if spec.needs_subquestions and not (spec.subq_min <= len(subquestions) <= spec.subq_max):
         problems.append(f"'subquestions' needs {spec.subq_min}-{spec.subq_max} entries, got {len(subquestions)}")
+    for field_name, items in (("answers", answers), ("subquestions", subquestions)):
+        for item in items:
+            text = clean_text(item)
+            if _PLACEHOLDER_RE.fullmatch(text):
+                problems.append(f"{field_name} contains a generic placeholder: {text}")
     return problems
 
 
