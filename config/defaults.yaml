@@ -20,23 +20,3 @@ mandatory_labels:
   "N": "No"
   "S": "Soft"
 
-
-
-# # Default values for generated questions. Editing this file changes behaviour; no code change needed.
-# question:
-#   relevance: "1"
-#   text_min_chars: 8
-#   text_max_chars: 400
-#   help_max_chars: 200
-
-# # Y = mandatory, N = optional, S = soft mandatory (LimeSurvey codes)
-# mandatory:
-#   default: "N"
-#   by_type:
-#     single_choice: "Y"
-#     yes_no: "Y"
-
-# mandatory_labels:
-#   Y: Yes
-#   N: "No"
-#   S: Soft
