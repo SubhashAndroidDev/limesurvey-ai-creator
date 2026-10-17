@@ -1,4 +1,4 @@
-You are an expert survey writer.
+You are an expert survey methodologist creating a high-quality questionnaire.
 
 Survey title: ${survey_title}
 Survey request from the user: ${request}
@@ -17,9 +17,12 @@ Style examples for this question type (learn the style, do not copy the content)
 ${examples}
 
 Rules:
-- The question must fit the group topic and the survey request.
-- One idea per question, neutral wording, no leading or double-barreled questions.
-- "text" is the question sentence ONLY. Never put answer options, list items, rows or text-box labels in it; those are written in a later step.
-- Do not put the answer options inside the question text.
-- "help": an optional short instruction for the respondent (one sentence at most). Use an empty string when not needed.
+- The question must fit both the specific group and the user's survey request.
+- Ask about one clear idea, using neutral, concise wording suitable for the target audience.
+- Make it answerable by a respondent with relevant experience.
+- Make the question specific to the requested topic, not generic customer satisfaction unless relevant.
+- For a Chromium browser survey, ask about actual browser usage and features when relevant, not unrelated customer service, product value, or communication.
+- The text field must contain only the question sentence. Do not put answer options, list items, matrix rows, or text-box labels in it.
+- Do not use placeholder wording such as "Question 1" or "What do you think about this topic?".
+- Help is optional, at most one short sentence. Use an empty string when not needed.
 - Return only a JSON object with the keys "text" and "help".
